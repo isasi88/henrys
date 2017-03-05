@@ -1,0 +1,173 @@
+<div class="row">
+<div class="container">
+	<div class="cta col-md-5 no-pad">
+			<h1>Creamos marcas, las hacemos crecer.</h1>
+			<h4>Nos dedicamos a la creación y expansión <strong>de tu marca retail</strong> a través de la <strong>imágen, tecnología y marketing 360º</strong>. </h4>
+			<button class="btn btn-primary cta-button">Cuéntanos tu proyecto</button>
+	</div>
+	<div class="col-md-7">
+	<section class="slider">
+		<% @services.limit(12).each do |s| %>
+		<% if s.id == 10 %>
+			<div class="slide slide--current" data-content="content-1-<%= s.id %>">
+				<div class="slide__mover">
+					<div class="zoomer flex-center">
+						<img class="zoomer__image" src="" width="200px">
+						<div class="preview">
+							<%= image_tag "slider-1.png" %>
+							<div class="zoomer__area zoomer__area--size-2"></div>
+						</div>
+					</div>
+				</div>
+				<h2 class="slide__title">
+					<span class="red"><%= s.slogan %></span> 
+					<%= s.name %>
+					<%= link_to "<p class='saber-mas'>Click para saber más</p>".html_safe, s, locals: {s: s}, class: "title-action" %>
+				</h2>
+			</div>
+			<% else %>
+			<div class="slide" data-content="content-1-<%= s.id %>">
+				<div class="slide__mover">
+					<div class="zoomer flex-center">
+						<img class="zoomer__image" src="" width="200px">
+						<div class="preview">
+							<%= image_tag "slider-1.png" %>
+							<div class="zoomer__area zoomer__area--size-2"></div>
+						</div>
+					</div>
+				</div>
+				<h2 class="slide__title">
+					<span class="red"><%= s.slogan %></span> 
+					<%= s.name %>
+					<%= link_to "<p class='saber-mas'>Click para saber más</p>".html_safe, s, locals: {s: s}, class: "title-action" %>
+				</h2>
+			</div>
+			<% end %>
+			<% end %>
+			<nav class="slider__nav">
+				<button class="button button--nav-prev"><i class="icon-left"></i><span class="text-hidden">Mas</span></button>
+				<button class="button button--nav-next"><i class="icon-forward"></i><span class=""></span></button>
+			</nav>
+		</section>
+		<!-- /slider-->
+		</div>
+</div>
+</div>
+</div>
+<section class="clients-list row no-gutter">
+			<ul class="clearfix no-gutter">
+				<% @works.limit(8).each do |w| %>
+					<li class="col-sm-3 work"><%= image_tag w.cover.url(:thumb) %>
+						<span class="work-details">
+							<h3><%= w.title %></h3>
+							<p><%= w.brief %></p>
+							<%= link_to "<button class='btn btn-outline-white'>Ver proyecto </button>".html_safe, w, locals: {w: w} %>
+						</span>
+					</li>
+				<% end %>
+			</ul>
+</section>
+<section id="feature-list" class="feature-list container">
+		<h2 class="text-center"> ¿Qué hacemos?</h2>
+		<h4 class="text-center">Despegamos tu negocio con un desarrollo 360º</h4>
+		<ul class="row clearfix">
+			<% @services.each_with_index do |s, index| %>
+				<% if index < 2 || index > 4 %> 
+					<li class="col-sm-6">
+						<div class="row no-gutter work-inner clearfix">
+							<div class="work-image" style="background-image: url(<%= s.teaser_url %>);">
+							<h1 class="work-slogan"><%= s.slogan %></h1>
+							</div>
+							<div class="work-detail clearfix">
+								<div class="col-sm-8 work-title">
+									<h2><%= s.name %></h2>
+								</div>
+								<div class="col-sm-4 work-action">
+									<%= link_to "<button class='btn btn-primary'>Lo quiero</button>".html_safe, s, locals: {s: s} %>
+								</div>
+							</div>
+						</div>
+					</li>
+				<% elsif index.between?(2,4) %>
+					 <li class="col-sm-4">
+						<div class="row no-gutter work-inner clearfix">
+							<div class="work-image" style="background: url'(s.teaser_url)' 50% 50% no-repeat;"></div>
+							<div class="work-detail clearfix">
+								<div class="col-sm-8 work-title">
+									<h2><%= s.name %></h2>
+									<p><%= s.description %></p>
+								</div>
+								<div class="col-sm-4 work-action">
+									<%= link_to "<button class='btn btn-primary'>Lo quiero</button>".html_safe, s, locals: {s: s} %>
+								</div>
+							</div>
+						</div>
+					</li>
+			<% end %>
+			<% end %>
+		</ul>
+</section>
+<footer>
+	<div class="container footer-inner">
+		<div class="row">
+			<div class="col-sm-4">
+				<h3>¿Tomamos un café?</h3>
+			</div>
+			<div class="col-sm-8">
+				<ul class="row clearfix">
+					<li class="col-md-3">¿Qué hacemos?</li>
+					<li class="col-md-3">Porqué Henrys</li>
+					<li class="col-md-3">Portfolio</li>
+					<li class="col-md-3">Redes Sociales</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!-- Modal -->
+<div class="modal budget-form" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">¿Charlamos un rato?</h4>
+      </div>
+      <div class="modal-body row">
+      		<div class="col-sm-4">
+      			<%= image_tag "contact.gif", class: "width-100" %>
+      			<h4 class="text-center">Algo se está cociendo...</h4>
+      		</div>
+      		<div class="col-sm-8">
+			<%= form_for @budget, remote: true, url: contacto_path do |message_form| %>
+			  <fieldset>
+			    <div class="field">
+			      <%= message_form.text_field :name, placeholder: "Nombre de contacto", class: "form-control" %>
+			    </div>
+			    
+			    <div class="field">
+			      <%= message_form.email_field :email, placeholder: "Tu E-mail", class: "form-control"%>
+			    </div>
+			    
+			    <div class="field">
+			      <%= message_form.text_area :content, placeholder: "¿Qué necesitas?", class: "form-control"%>
+			    </div>
+			  </fieldset>
+			  
+			  <fieldset>
+			    <div class="field">
+			      <%= message_form.submit "Enviar", class: "btn btn-primary width-100" %>
+			    </div>
+			  </fieldset>
+			  </div>
+			<% end %>
+      </div>
+    </div>
+  </div>
+
+<%= javascript_include_tag "slider" %>
+<script>
+$(document).ready(function() {
+	setTimeout(function() { $(".cta-button").fadeIn(1500)}, 2500);
+});
+</script>

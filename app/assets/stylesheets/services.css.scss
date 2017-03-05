@@ -1,0 +1,101 @@
+$item_width: 300px;
+$sidebar_width: 300px;
+$color_primary: #f5f5f5;
+$color_secondary: #fff;
+$color_link: #81c483;
+$anim-time: 0.5s;
+
+@import "base";
+@import "mediaqueries";
+
+
+
+.service-cover-img {
+	height: 500px;
+	background-size: cover;
+	.info-container {
+		position: relative;
+		height: 100%;
+		text-align: left;
+		width: 41%;
+    	margin-left: 180px;
+		line-height: 1;
+		padding-top: 6rem;
+
+		h1 {
+			line-height: 0.9;
+			font-size: 5rem;
+		}
+		h2 {
+			color: #333;
+			font-family: "Playfair Display";
+			font-style: italic;
+		}
+		p {
+			margin-top: 30px;
+			width: 70%
+		}
+		button {
+			margin-top: 20px;
+			width: 100%;
+		}
+	}
+}
+
+.subservice-item {
+	list-style: none;
+	padding: 45px 55px 30px;
+	color: inherit;
+	background: white;
+	line-height: 100%;
+	min-height: $item_width;
+	cursor: pointer;
+	text-align: center;
+	border-bottom: 1px solid #eee;
+	&:after {
+		content: '';
+		height: 80%; //You can change this if you want smaller/bigger borders
+		width: 1px;
+
+		position: absolute;
+		right: 0;
+		bottom: 0; // If you want to set a smaller height and center it, change this value
+
+		background-color: #eee; // The color of your border
+	}
+	&:nth-child(n+3):after {
+		height: 100%;
+	}
+	&:nth-child(n+6):after {
+		height: 100%;
+	}
+	&:nth-child(n+9):after {
+		height: 80%;
+		top: 0;
+	}
+	.saber-mas {
+		font-family: "Playfair Display";
+		font-style: italic;
+		margin-top: 10px;
+	}
+	&:hover {
+		border-top: 8px solid #333;
+	}
+	.subservice-inner {
+		background: white;
+    	border-top: 1px solid #eee;
+    	padding: 0 20px;
+		h1 {
+			color: #999;
+			font-size: 3rem;
+		}
+		h2 {
+			color: #999;
+		}
+	}
+	}
+	.subservices-list {
+		position: relative;
+		top: -100px;
+	}
+

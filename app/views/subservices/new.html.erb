@@ -1,0 +1,6 @@
+<%= simple_form_for [@service,@subservice] do |f| %>
+  <%= f.input :name, html: {class: "form-control"} %>
+  <%= f.input :description %>
+  <%= f.input :subicon %>
+<%= f.button :submit %>
+<% end %>

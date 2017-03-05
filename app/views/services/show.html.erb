@@ -1,0 +1,27 @@
+<section class="row service-cover">
+	<div style="background-image: url(<%= @service.teaser_url(:cover) %>); background-size: cover;background-color: #eee;background-size: 75%;background-repeat: no-repeat;background-position: 60% 50%;" class="service-cover-img">
+	<div class="container info-container">
+			<h1><%= @service.name %></h1>
+			<h2><%= @service.slogan %></h2>
+			<p><%= @service.description %></p>
+	</div>
+	</div>
+</section>
+
+<section class="subservices-list">
+		<section id="grid" class="row grid">
+			<div class="container">
+			<ul class="list-none row">
+				<% @service.subservices.limit(12).each do |s| %>
+					<li class="subservice-item col-sm-4" href="#">
+						<%= image_tag s.subicon_url(:thumb) %>
+						<h2 class="title title--preview"><%= s.name %></h2>
+						<p class="saber-mas">Click para saber más</p>
+					</li>
+				<% end %>
+			</ul>
+			</div>
+		</section>
+</section>
+
+

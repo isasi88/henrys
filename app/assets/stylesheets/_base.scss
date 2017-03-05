@@ -1,0 +1,112 @@
+$serif: 'Playfair Display', serif;
+$sansserif: 'Martel Sans', Arial, sans-serif;
+$item_width: 300px;
+$sidebar_width: 300px;
+$color_primary: #f5f5f5;
+$color_secondary: #fff;
+$color_link: #81c483;
+$anim-time: 0.5s;
+
+body {
+	background: $color_secondary;
+	color: #7b7b7b;
+	font-weight: 400;
+	font-size: 16px;
+	font-family: $sansserif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+	overflow-y: scroll; /* force scroll to appear */
+}
+
+
+
+/* grid item element and full content element styles */
+.title {
+	margin: 0;
+	font-size: 1.875em;
+	text-align: center;
+}
+
+.title--preview {
+	-webkit-flex: 1;
+	flex: 1;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.loader {
+	height: 1px;
+	width: 40%;
+	margin: 1em auto;
+	position: relative;
+	background: rgba(0,0,0,0.1);
+}
+
+.loader::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background: #a4e7ad;
+	left: 0;
+	top: -1px;
+	-webkit-transform: scale3d(0,1,1);
+	transform: scale3d(0,1,1);
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+}
+
+
+.article-nav button:hover {
+	color: #fff;
+}
+
+/* main content */
+.content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	pointer-events: none;
+	height: 0; /* Avoid second scroll bar in Chrome! */
+	visibility: hidden;
+	z-index: 400;
+	overflow: hidden;
+}
+
+.content.content--show {
+	height: 100vh;
+	pointer-events: auto;
+	visibility: visible;
+}
+
+
+/* single content item */
+.content__item {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	overflow: hidden;
+	height: 0;
+	opacity: 0;
+	padding: 60px 60px 80px 60px;
+	pointer-events: none;
+	font-size: 0.85em;
+	&:hover {
+		background: white;
+	}
+	p {
+		max-width: 1200px;
+		margin: 1em auto;
+		text-align: justify;
+	}
+	p:first-of-type {
+		font-size: 1.35em;
+	}
+}

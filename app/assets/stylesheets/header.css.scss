@@ -1,0 +1,17 @@
+.logo {max-width: 140px;}
+
+.navbar-nav a {
+	font-size: 1.6rem;
+	position: relative;
+
+	&:after {
+		content: "";
+		width: 4px;
+		height: 4px;
+		border-radius: 50%;
+		background: #ccc;
+		position: absolute;
+		right: 0;
+		top: 40%;
+	}
+}

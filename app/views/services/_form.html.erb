@@ -1,0 +1,19 @@
+<div class="row">
+<%= simple_form_for @service, class: "form-horizontal" do |f| %>
+  <%= f.input :name, html: {class: "form-control"} %>
+  <%= f.input :description %>
+  <%= f.input :slogan %>
+  <%= f.input :teaser %>
+
+<div class="row">
+   <%= f.fields_for :subservices do |builder| %>
+   <div class="col-md-4 panel">
+     <%= builder.input :name, label: "Nombre Servicio", class: "form-control" %>
+     <%= builder.input :description, label: "Descripción del servicio" %>
+     <%= builder.input :subicon, label: "Icono" %>
+     </div>
+     <hr>
+  <% end %>
+</div>
+<%= f.button :submit %>
+<% end %>
