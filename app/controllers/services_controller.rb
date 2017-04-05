@@ -17,12 +17,14 @@ class ServicesController < ApplicationController
 
   # GET /services/new
   def new
+    @budget = Budget.new
     @service = Service.new
     @service.subservices.build if @service.subservices.blank?
   end
 
   # GET /services/1/edit
   def edit
+    @budget = Budget.new
     @service = Service.find(params[:id])
     @service.subservices.build if @service.subservices.blank?
   end
