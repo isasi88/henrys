@@ -1,0 +1,132 @@
+<div class="row porque-cta" style="background-image: url(<%= asset_path('test.png') %>); background-size: cover; background-position: 0;">
+	<div class="container" >
+	<div class="col-sm-6 cta-left">
+			<h1>Nosotros queremos que vendas más.</h1>
+	</div>
+	<div class="col-sm-6">
+	</div>
+	</div>
+</div>
+<div class="row">
+	<section class="why-menu">
+			<div class="tab">
+				<div class="container">
+					<ul class="tabs row">
+						<li class="current col-sm-4"><a href="#">Proceso Creativo</a></li>
+						<li class="col-sm-4"><a href="#">Nos ocupamos de todo</a></li>
+						<li class="col-sm-4"><a href="#">Henry's Cloud</a></li>
+					</ul> <!-- / tabs -->
+				</div>
+				<div class="tab_content container">
+					<div class="tabs_item">
+						<div class="tab_item_inner row">
+							<div class="col-sm-5">
+								<%= image_tag "whyus/why_1.svg" %>
+							</div>
+							<div class="col-sm-7 description">
+								<h2>Entendemos. </h2>
+								<h4 class="saber-mas">Nos tomamos los cafés que haga falta.</h4>
+								<p>Normalmente es nuestro primer paso, ayudándonos a entender tu audiencia, tu target potencial, y las personas que interactuan con tu marca. Esto es tremendamente valioso para enfocar nuestro trabajo.
+								</p>
+							</div>
+						</div>
+						<div class="tab_item_inner row">	
+							<div class="col-sm-7 description">
+								<h2>Nos ponemos al lío.</h2>
+								<h4 class="saber-mas">Hora de la cocacola cero.</h4>
+								<p>Una vez hemos entendido tu negocio, nos ponemos manos a la obra. Pensamos y desarrollamos, explorando la mejor manera de conseguir los objetivos que nos hemos marcado. 
+								</p>
+							</div>
+							<div class="col-sm-5">
+								<%= image_tag "whyus/why_2.svg" %>
+							</div>
+						</div>
+						<div class="tab_item_inner row">	
+							<div class="col-sm-5">
+								<%= image_tag "whyus/why_3.svg" %>
+							</div>
+							<div class="col-sm-7 description">
+								<h2>Lanzamos y monitorizamos. </h2>
+								<h4 class="saber-mas">Lanzamos, medimos, iteramos.</h4>
+								<p>De nada sirve desarrollar si después no medimos y analizamos los resultados. De esta manera, podremos darle el amor que merece el desarrollo y crecimiento de tu marca. 
+								</p>
+							</div>
+						</div>
+					</div>
+					<!-- Nos ocupamos de todo -->
+					<div class="tabs_item">
+						<div class="tab_item_inner row">
+							<div class="col-sm-5">
+								<%= image_tag "whyus/imprenta.svg" %>
+							</div>
+							<div class="col-sm-7 description">
+								<h2>Gestión de imprenta a los mejores precios </h2>
+								<h4 class="saber-mas">Impresión de máxima calidad a los mejores precios.</h4>
+								<p>Trabajamos con las mayores imprentas del país, siendo nuestros partners desde hace mucho tiempo. Es así como podemos conseguirte los <strong>mejores precios</strong> y una impresión con <strong>garantía total</strong>, sin preocuparte por nada.
+								</p>
+							</div>
+						</div>
+						<div class="tab_item_inner row">	
+							<div class="col-sm-7 description">
+								<h2>Soporte 365 días al año </h2>
+								<h4 class="saber-mas">¿Una urgencia? Henry's no te dejará tirado.</h4>
+								<p>¿Se ha caido tu web? ¿Necesitas ayuda urgente con tu negocio? ¿Hay algo que no funciona? <strong>Henry's estará ahí los 365 días del año para ayudarte.</strong>
+								</p>
+							</div>
+							<div class="col-sm-5">
+								<%= image_tag "whyus/support.svg" %>
+							</div>
+						</div>
+						<div class="tab_item_inner row">	
+							<div class="col-sm-5">
+								<%= image_tag "whyus/conocemos.svg" %>
+							</div>
+							<div class="col-sm-7 description">
+								<h2>Conocemos el negocio </h2>
+								<h4 class="saber-mas">Somos propietarios de varios negocios retail.</h4>
+								<p>En Henry's, conocemos el negocio de dentro hacia fuera, ya que vivimos el día a día en negocios de hostelería y retail.
+								Podemos ofrecerte una <strong>visión realista</strong> 360º de nuestro trabajo.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="tabs_item">
+						<div class="tab_item_inner row">
+							<div class="col-sm-5">
+								<%= image_tag "whyus/clientes.svg" %>
+							</div>
+							<div class="col-sm-7 description">
+								<h2>Tu zona de cliente </h2>
+								<h4 class="saber-mas">Accede a tus archivos, facturas y mucho más.</h4>
+								<p>En tu zona de cliente Henry's, podrás acceder a tus archivos, facturas, soporte 365 días, promociones y mucho más.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div> <!-- / tab_content -->
+			</div> <!-- / tab -->
+	</section>
+</div>
+
+<script>
+$(document).ready(function() { 
+
+	(function ($) { 
+		$('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
+		
+		$('.tab ul.tabs li a').click(function (g) { 
+			var tab = $(this).closest('.tab'), 
+				index = $(this).closest('li').index();
+			
+			tab.find('ul.tabs > li').removeClass('current');
+			$(this).closest('li').addClass('current');
+			
+			tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
+			tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
+			
+			g.preventDefault();
+		} );
+	})(jQuery);
+
+});
+</script>

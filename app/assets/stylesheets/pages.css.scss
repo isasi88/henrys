@@ -1,3 +1,101 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// About
+
+.porque-cta {
+	height: 400px;
+	.cta-left {
+		padding: 80px 0;
+	}
+	img {
+		overflow: hidden;
+		max-height: 400px;
+	}
+}
+.why-menu {
+	.tab {
+		background: white;
+		border-top: 1px solid #eee;
+	}
+	ul {
+		border: 1px solid #eee;
+		list-style: none;
+		padding: 0;
+		position: relative;
+		top: -30px;
+		background: white;
+		li {
+			color: #444;
+			padding: 20px 20px;
+			letter-spacing: 3px;
+			font-family: "Larsseit";
+			text-transform: uppercase;
+			text-align: center;
+			&:nth-child(2) {
+				text-align: center;
+				border-left: 1px solid #eee;
+				border-right: 1px solid #eee;
+			}
+			&:nth-child(3) {
+				text-align: center;
+			}
+			&:hover {
+				background: #eee;
+				text-decoration: none;
+				border: 0;
+			}
+			a:hover {
+				text-decoration: none;
+				color: inherit;
+				border: 0;
+			}
+		}
+	}
+}
+
+.tabs_item {
+	padding-bottom: 40px;
+	p {
+		margin-top: 20px;
+		font-size: 1.7rem;
+		font-weight: 100;
+		padding-left: 30px;
+		border-left: 1px solid #eee;
+		font-family: "Helvetica Neue";
+		font-weight: 400;
+		color: #999;
+	}
+	.saber-mas {
+		color: #F07979;
+	}
+	h2 {
+		font-size: 3.4rem;
+		color: #666;
+	}
+	img {
+		width: 100%;
+	}
+}
+
+	.tab_item_inner {
+		width: 90%;
+		margin: auto;
+		border-bottom: 1px solid #eee;
+		margin-top: 30px;
+		padding: 40px 0px 60px 0px;
+		&:nth-child(2n) {
+			text-align: right;
+			p {
+				border-left: 0;
+				line-height: 2rem;
+				padding-left: 0;
+				padding-right: 30px;
+				border-right: 1px solid #eee;
+			}
+		}
+		&:last-child {
+			border-bottom: 0;
+		}
+	}

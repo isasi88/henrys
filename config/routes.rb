@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   end
 
 
+  get 'porque-henrys', to: 'pages#about', as: :about
   get 'contacto', to: 'budgets#new', as: 'contacto'
   post 'contacto', to: 'budgets#create'
 

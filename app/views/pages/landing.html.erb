@@ -55,17 +55,18 @@
 </div>
 </div>
 <section class="clients-list row no-gutter">
-			<ul class="clearfix no-gutter">
-				<% @works.limit(8).each do |w| %>
-					<li class="col-sm-3 work"><%= image_tag w.cover.url(:thumb) %>
-						<span class="work-details">
-							<h3><%= w.title %></h3>
-							<p><%= w.brief %></p>
-							<%= link_to "<button class='btn btn-outline-white'>Ver proyecto </button>".html_safe, w, locals: {w: w} %>
-						</span>
-					</li>
-				<% end %>
-			</ul>
+	<ul class="clearfix no-gutter">
+		<% @works.each do |w| %>
+			<li class="col-sm-3 work">
+			<%= image_tag w.cover_url(:big) %>
+				<span class="work-details">
+					<h3><%= w.title %></h3>
+					<p><%= w.brief %></p>
+					<%= link_to "<button class='btn btn-outline-white'>Ver proyecto </button>".html_safe, w, locals: {w: w} %>
+				</span>
+			</li>
+		<% end %>
+	</ul>
 </section>
 <section id="feature-list" class="feature-list container">
 		<h2 class="text-center"> ¿Qué hacemos?</h2>
@@ -107,67 +108,25 @@
 			<% end %>
 		</ul>
 </section>
-<footer>
-	<div class="container footer-inner">
-		<div class="row">
-			<div class="col-sm-4">
-				<h3>¿Tomamos un café?</h3>
-			</div>
-			<div class="col-sm-8">
-				<ul class="row clearfix">
-					<li class="col-md-3">¿Qué hacemos?</li>
-					<li class="col-md-3">Porqué Henrys</li>
-					<li class="col-md-3">Portfolio</li>
-					<li class="col-md-3">Redes Sociales</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</footer>
-
-<!-- Modal -->
-<div class="modal budget-form" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">¿Charlamos un rato?</h4>
-      </div>
-      <div class="modal-body row">
-      		<div class="col-sm-4">
-      			<%= image_tag "contact.gif", class: "width-100" %>
-      			<h4 class="text-center">Algo se está cociendo...</h4>
-      		</div>
-      		<div class="col-sm-8">
-			<%= form_for @budget, remote: true, url: contacto_path do |message_form| %>
-			  <fieldset>
-			    <div class="field">
-			      <%= message_form.text_field :name, placeholder: "Nombre de contacto", class: "form-control" %>
-			    </div>
-			    
-			    <div class="field">
-			      <%= message_form.email_field :email, placeholder: "Tu E-mail", class: "form-control"%>
-			    </div>
-			    
-			    <div class="field">
-			      <%= message_form.text_area :content, placeholder: "¿Qué necesitas?", class: "form-control"%>
-			    </div>
-			  </fieldset>
-			  
-			  <fieldset>
-			    <div class="field">
-			      <%= message_form.submit "Enviar", class: "btn btn-primary width-100" %>
-			    </div>
-			  </fieldset>
-			  </div>
-			<% end %>
-      </div>
-    </div>
-  </div>
 
 <%= javascript_include_tag "slider" %>
 <script>
 $(document).ready(function() {
 	setTimeout(function() { $(".cta-button").fadeIn(1500)}, 2500);
+});
+
+$(document).ready(function(){
+	$('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash;
+	    var $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 900, 'swing', function () {
+	        window.location.hash = target;
+	    });
+	});
 });
 </script>

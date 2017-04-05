@@ -1,15 +1,16 @@
 class WorksController < ApplicationController
   before_action :set_work, only: [:show, :edit, :update, :destroy]
-
   # GET /works.json
   def index
+    @budget = Budget.new
     @works = Work.all
   end
 
   # GET /works/1
   # GET /works/1.json
   def show
-    w = w
+    @budget = Budget.new
+    @work = Work.find(params[:id])
   end
 
   # GET /works/new
@@ -19,6 +20,7 @@ class WorksController < ApplicationController
 
   # GET /works/1/edit
   def edit
+    @budget = Budget.new
     @work = Work.find(params[:id])
   end
 
@@ -35,6 +37,7 @@ class WorksController < ApplicationController
 # PATCH/PUT /works/1
   # PATCH/PUT /works/1.json
   def update
+    @budget = Budget.new
     @work = Work.find(params[:id])
     respond_to do |format|
       if @work.update(work_params)

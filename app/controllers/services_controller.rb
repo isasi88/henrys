@@ -9,6 +9,7 @@ class ServicesController < ApplicationController
   # GET /services/1
   # GET /services/1.json
   def show
+    @budget = Budget.new
     @services = Service.all
     @service = Service.find(params[:id])
   end

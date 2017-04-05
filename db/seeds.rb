@@ -16,14 +16,14 @@ services = Service.create([
 	{name: "Branding", description: "Lorem Ipsum", slogan: "Esto es un slogan"}
 	])
 works = Work.create([
-	{title: "Sushi Artist", brief: "Lorem ipsum"},
-	{title: "Sushi Artist", brief: "Lorem ipsum"},
-	{title: "Sushi Artist", brief: "Lorem ipsum"},
-	{title: "Sushi Artist", brief: "Lorem ipsum"},
-	{title: "Sushi Artist", brief: "Lorem ipsum"},
-	{title: "Sushi Artist", brief: "Lorem ipsum"},
-	{title: "Sushi Artist", brief: "Lorem ipsum"},
-	{title: "Sushi Artist", brief: "Lorem ipsum"},
-	{title: "Sushi Artist", brief: "Lorem ipsum"},
-	{title: "Sushi Artist", brief: "Lorem ipsum"},
+	{title: "Sushi Artist", brief: "Lorem ipsum", cover: "te.png"},
+	{title: "Sushi Artist", brief: "Lorem ipsum", cover: "te.png"},
+	{title: "Sushi Artist", brief: "Lorem ipsum", cover: "te.png"},
+	{title: "Sushi Artist", brief: "Lorem ipsum", cover: "te.png"},
+	{title: "Sushi Artist", brief: "Lorem ipsum", cover: "te.png"},
+	{title: "Sushi Artist", brief: "Lorem ipsum", cover: "te.png"},
+	{title: "Sushi Artist", brief: "Lorem ipsum", cover: "te.png"},
+	{title: "Sushi Artist", brief: "Lorem ipsum", cover: "te.png"},
+	{title: "Sushi Artist", brief: "Lorem ipsum", cover: "te.png"},
+	{title: "Sushi Artist", brief: "Lorem ipsum", cover: "te.png"},
 	{title: "Sushi Artist", brief: "Lorem ipsum"}])
