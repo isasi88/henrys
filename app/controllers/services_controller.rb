@@ -3,6 +3,7 @@ class ServicesController < ApplicationController
 
   # GET /services.json
   def index
+    @budget = Budget.new
     @services = Service.all
   end
 
