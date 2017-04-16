@@ -58,7 +58,7 @@
 	<ul class="clearfix no-gutter">
 		<% @works.each do |w| %>
 			<li class="col-sm-3 work">
-			<%= image_tag w.cover_url(:big) %>
+			<%= image_tag w.cover_url(:thumb) %>
 				<span class="work-details">
 					<h3><%= w.title %></h3>
 					<p><%= w.brief %></p>
