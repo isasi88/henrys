@@ -15,6 +15,7 @@ class WorksController < ApplicationController
 
   # GET /works/new
   def new
+    @budget = Budget.new
     @work = Work.new
   end
 
