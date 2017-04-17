@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row cta">
 <div class="container">
 	<div class="cta col-md-5 no-pad">
 			<h1>Creamos marcas, las hacemos crecer.</h1>
@@ -57,7 +57,7 @@
 <section class="clients-list row no-gutter">
 	<ul class="clearfix no-gutter">
 		<% @works.each do |w| %>
-			<li class="col-sm-3 work">
+			<li class="col-sm-4 work">
 			<%= image_tag w.cover_url(:big) %>
 				<span class="work-details">
 					<h3><%= w.title %></h3>
